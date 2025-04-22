@@ -9,7 +9,7 @@ export const ThemeProvider = ({ children }) => {
   // Get theme from localStorage or default to 'light'
   const [currentTheme, setCurrentTheme] = useState(() => {
     const savedTheme = localStorage.getItem("weatherAppTheme");
-    return savedTheme || "light";
+    return savedTheme || "dark";
   });
 
   // Apply theme to document

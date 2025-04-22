@@ -27,23 +27,56 @@ export const WeatherProvider = ({ children }) => {
   }, [units]);
 
   // Get user's location on initial load
+  // useEffect(() => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         const { latitude, longitude } = position.coords;
+  //         fetchWeatherByCoords(latitude, longitude);
+  //       },
+  //       (error) => {
+  //         console.error("Error getting location:", error);
+  //         // Default to a major city if geolocation fails
+  //         fetchWeatherByCity("London");
+  //       }
+  //     );
+  //   } else {
+  //     // Geolocation not supported
+  //     fetchWeatherByCity("London");
+  //   }
+  // }, []);
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          fetchWeatherByCoords(latitude, longitude);
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          // Default to a major city if geolocation fails
+    const getLocation = async () => {
+      try {
+        const permissionStatus = await navigator.permissions.query({
+          name: "geolocation",
+        });
+
+        if (
+          permissionStatus.state === "granted" ||
+          permissionStatus.state === "prompt"
+        ) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const { latitude, longitude } = position.coords;
+              fetchWeatherByCoords(latitude, longitude);
+            },
+            (error) => {
+              console.error("Error getting location:", error);
+              fetchWeatherByCity("London");
+            }
+          );
+        } else {
+          console.warn("Geolocation permission denied, defaulting to city.");
           fetchWeatherByCity("London");
         }
-      );
-    } else {
-      // Geolocation not supported
-      fetchWeatherByCity("London");
-    }
+      } catch (err) {
+        console.error("Permissions API error:", err);
+        fetchWeatherByCity("London");
+      }
+    };
+
+    getLocation();
   }, []);
 
   const fetchWeatherByCity = async (city) => {
