@@ -1,0 +1,142 @@
+.hourly-forecast {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 2rem;
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.hourly-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.hourly-header h2 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.scroll-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scroll-controls button {
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scroll-controls button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.hourly-items-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hourly-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--background-color);
+}
+
+.hourly-items::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hourly-items::-webkit-scrollbar-track {
+  background: var(--background-color);
+  border-radius: 3px;
+}
+
+.hourly-items::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.hourly-item {
+  min-width: 100px;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hourly-time {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.hourly-temp {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.hourly-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.hourly-detail-label {
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.hourly-detail-value {
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+.hourly-forecast-skeleton {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hourly-skeleton-item {
+  min-width: 100px;
+  height: 200px;
+  border-radius: 0.75rem;
+}
+.hourly-item {
+  width: 120px; /* Make each item a bit wider */
+  padding: 10px;
+  font-size: 14px; /* Increase text size */
+  margin-right: 10px;
+}
+
+.hourly-items {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding: 20px 0;
+}

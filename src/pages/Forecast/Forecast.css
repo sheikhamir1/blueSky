@@ -1,0 +1,8 @@
+.forecast-page {
+  padding: 1rem 0;
+}
+
+.forecast-page h1 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}

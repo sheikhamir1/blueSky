@@ -1,0 +1,28 @@
+.weather-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.icon-small svg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-medium svg {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-large svg {
+  width: 72px;
+  height: 72px;
+}
+
+@media (max-width: 768px) {
+  .icon-large svg {
+    width: 56px;
+    height: 56px;
+  }
+}

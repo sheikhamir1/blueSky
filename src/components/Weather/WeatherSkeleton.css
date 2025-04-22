@@ -1,0 +1,132 @@
+.weather-skeleton {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 2rem;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-location {
+  width: 60%;
+}
+
+.skeleton-title {
+  height: 2rem;
+  width: 70%;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-subtitle {
+  height: 1rem;
+  width: 50%;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text {
+  height: 0.8rem;
+  width: 40%;
+  border-radius: 0.25rem;
+}
+
+.skeleton-temp {
+  display: flex;
+  align-items: center;
+}
+
+.skeleton-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.skeleton-temp-value {
+  height: 3rem;
+  width: 100px;
+  border-radius: 0.25rem;
+}
+
+.skeleton-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeleton-detail-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--background-color);
+  border-radius: 0.75rem;
+}
+
+.skeleton-detail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.skeleton-detail-info {
+  flex: 1;
+}
+
+.skeleton-detail-label {
+  height: 0.8rem;
+  width: 50%;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-detail-value {
+  height: 1rem;
+  width: 70%;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .skeleton-header {
+    flex-direction: column;
+  }
+
+  .skeleton-location {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .skeleton-details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+.shimmer {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+.weather-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .weather-skeleton {
+    padding: 10px;
+  }
+}

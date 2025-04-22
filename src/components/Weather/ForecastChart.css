@@ -1,0 +1,29 @@
+.forecast-chart {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 2rem;
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.forecast-chart h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.chart-container {
+  height: 300px;
+}
+
+.chart-skeleton {
+  height: 300px;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
